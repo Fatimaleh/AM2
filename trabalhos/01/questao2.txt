@@ -1,0 +1,6 @@
+- Utilizei a forma semântica de organizar o código de marcação em html, a tag `<main>` foi usada para envolver todos os blocos de texto, indicando que esse é o conteúdo principal da página.
+   - Utilizei a tag `<section>` para cada bloco de texto, garantindo uma estrutura semântica correta.
+   - Adicei classes específicas (`bloco`, `bloco1`, `bloco2`, `bloco3`, `bloco4`) para estilizar cada seção de forma distinta.
+
+   - Na web, cada elemento tem como padrão o formato de bloco que ocupa uma linha inteira, podemos utilizar o css para manipular esses elementos. No meu caso, a classe `.bloco` aplica estilos básicos comuns a todos os blocos, como `padding` (espaçamento interno) `margin` (espaçamento externo) e `border-radius` (formato da borda da "caixa" div).
+   - As classes `.bloco1`, `.bloco2`, `.bloco3` e `.bloco4` aplicam estilos específicos a cada bloco, como `background-color` (cor de fundo), `border` e `font-size` (tamanho da fonte).

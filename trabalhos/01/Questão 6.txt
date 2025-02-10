@@ -1,0 +1,27 @@
+6 Você quer adicionar um botão na página que, quando clicado, exibe um alerta (alert box) no navegador.
+
+**Pergunta:** Escreva o HTML e o JavaScript necessários para criar esse botão e mostrar a mensagem “Olá, mundo!” ao usuário. Explique sucintamente como o JavaScript é “amarrado” ao botão.
+
+Quando a caixa é ativada (clicada) ela chama a função no JavaScript, que tem a única utilidade de ativar o alerta.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 6</title>
+</head>
+<body>
+  <button onclick="alertBox()">Olá Mundo</button>
+
+  <script src="Questão6.js"></script>
+</body>
+</html>
+
+JavaScript
+
+function alertBox() {
+    alert("Olá mundo!!!");
+  }

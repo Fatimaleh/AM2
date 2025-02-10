@@ -1,0 +1,10 @@
+3. Você adicionou uma barra de navegação fixa no topo do site usando CSS (`position: fixed; top: 0;`). Entretanto, seu conteúdo principal está ficando escondido atrás dessa barra quando a página é carregada.
+
+**Pergunta:** Cite pelo menos duas maneiras de resolver esse problema usando CSS (ou pequenas alterações no HTML), explicando as vantagens e desvantagens de cada abordagem.
+
+Resposta:
+
+Alterando no HTML, podemos chamar um style alterando o padding-top em altura maior que a barra.
+Já no CSS podemos criar uma class, também fazendo uma alteração no paddin-top.
+
+Criar no CSS nos traz maior liberdade para fazer diversas alterações como a possibilidade de identificar o tamanho utilizado na tela de navegação e deixar o padding-top proporcional ao tamanho de tela.

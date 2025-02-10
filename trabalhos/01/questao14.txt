@@ -1,0 +1,26 @@
+Sobre o Volume de Dados Suportado:
+- localStorage e sessionStorage têm um limite de armazenamento de aproximadamente 5MB por domínio. Isso é suficiente para armazenar pequenas quantidades de dados, como preferências de usuário ou estado de UI.
+- IndexedDB é projetado para armazenar grandes volumes de dados, suportando dezenas de megabytes ou mais. É adequado para aplicações que precisam armazenar dados complexos e em grande quantidade, como caches de dados offline ou bancos de dados de aplicações ricas.
+
+Forma de Armazenamento:
+- localStorage e sessionStorage armazenam dados como pares chave/valor, onde ambos a chave e o valor são strings. Isso limita o tipo de dados que pode ser armazenado diretamente.
+- IndexedDB é um banco de dados NoSQL que permite armazenar e consultar dados complexos, como objetos JavaScript. Ele suporta transações, índices e consultas avançadas, tornando-o adequado para aplicações mais complexas.
+
+Persistência:
+- localStorage persiste os dados mesmo após o navegador ser fechado e reaberto. Os dados permanecem até serem removidos manualmente pelo código ou pelo usuário.
+- sessionStorage armazena dados apenas para a sessão atual do navegador. Os dados são removidos automaticamente quando a janela ou aba do navegador é fechada.
+- IndexedDB persiste dados de maneira semelhante ao `localStorage`, mantendo-os até que sejam removidos manualmente.
+
+Nos Casos de uso: 
+- localStorage é útil para:
+  - Armazenar preferências de usuário, como temas ou configurações de idioma.
+  - Dados que precisam estar disponíveis mesmo após o usuário fechar e reabrir o navegador, como estado de login.
+  
+- sessionStorage é útil para:
+  - Dados temporários que só precisam existir durante a sessão do navegador, como dados de formulário que não precisam ser persistidos.
+  - Armazenar dados sensíveis que devem ser removidos ao fechar a janela do navegador.
+  
+- IndexedDB é útil para:
+  - Aplicações que precisam armazenar grandes volumes de dados, como aplicativos de produtividade offline que armazenam documentos localmente.
+  - Aplicações que necessitam de consultas complexas e dados estruturados, como aplicações de gerenciamento de clientes (CRM) ou gerenciamento de inventário.
+  - Caches de dados offline para melhorar o desempenho de aplicações que precisam funcionar com conexões de internet instáveis ou sem conexão.
