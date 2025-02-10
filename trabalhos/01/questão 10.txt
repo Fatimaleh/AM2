@@ -1,5 +1,0 @@
-Code Splitting
-
-método que permite dividir o código JavaScript em vários arquivos que são carregados dinamicamente.
-
-const LazyComponent = React.lazy(() => import('./LazyComponent'));

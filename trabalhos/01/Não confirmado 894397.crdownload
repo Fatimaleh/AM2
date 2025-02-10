@@ -1,3 +1,0 @@
-function alertBox() {
-    alert("Olá mundo!!!");
-  }

@@ -1,8 +1,0 @@
-Adicionei um <div id="main-content"> que servirá como o container principal onde o conteúdo será carregado.
-As tags de navegação <a> têm onclick handlers para chamar a função loadContent com o identificador da seção desejada.
-Ao criar um objeto contents ele armazena o HTML de cada seção como strings.
-Na função loadContent(section) atualiza o innerHTML do container main-content com o conteúdo correspondente à seção selecionada.
-Para garantir que eventos ou scripts associados às novas seções sejam configurados corretamente, todos os scripts específicos de cada seção devem ser incluídos no HTML carregado dinamicamente. Por exemplo, se uma seção precisar de um evento de clique, esse script deve estar dentro do conteúdo correspondente no objeto contents.
-Ao usar JavaScript para atualizar o innerHTML de um elemento, estamos manipulando o DOM (Document Object Model). Isso faz com que página carregue e os conteúdos sejam trocados dinamicamente sem recarregar a página inteira.
-Utilizar innerHTML é uma maneira rápida de atualizar o conteúdo, mas pode ter implicações de desempenho e segurança (risco de XSS - cross-site scripting).
-Uma boa prática em SPAs é q em vez de redefinir o innerHTML de um grande container, redefinir atualizações incrementais de partes específicas do DOM minimiza o redesenho e a re-renderização, resultando em melhor desempenho.
