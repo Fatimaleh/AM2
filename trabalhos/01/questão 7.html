@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <form id="contactForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="nameError"></span>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email">
+        <span class="error" id="emailError"></span>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message"></textarea>
+        <span class="error" id="messageError"></span>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="formulariojs.js"></script>
+
+</body>
+</html>
+
+<!--O JavaScript captura o evento de envio do formulário (submit), interrompe o envio padrão (preventDefault()) e verifica cada campo do formulário.
+Se houver erros, exibe mensagens diretamente no DOM. O JavaScript usa funções como:
+
+document.getElementById("id") → Captura um elemento do HTML pelo seu ID.
+.value → Obtém o valor digitado no campo.
+.trim() → Remove espaços antes e depois do texto.
+.textContent → Modifica o texto dentro de uma span para exibir mensagens de erro. -->

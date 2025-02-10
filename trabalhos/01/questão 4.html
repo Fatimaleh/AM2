@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile First vs Desktop First</title>
+    <style>
+        .mobile-first {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+        @media (min-width: 768px) {
+            .mobile-first {
+                background-color: royalblue;
+                font-size: 24px;
+                padding: 40px;
+            }
+        }
+        .desktop-first {
+            background-color: lightcoral;
+            padding: 40px;
+            text-align: center;
+            font-size: 24px;
+        }
+        @media (max-width: 767px) {
+            .desktop-first {
+                background-color: darkred;
+                font-size: 16px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-first">
+        Mobile First
+    </div>
+    <div class="desktop-first">
+        Desktop First
+    </div>
+
+</body>
+</html>
+
+<!-- Problema 1:
+Se os estilos Desktop First forem aplicados antes dos estilos Mobile First, os estilos para telas pequenas podem ser sobrescritos pelos estilos maiores.
+Solução:
+Ajustar a ordem das media queries, garantindo que estilos menores sejam aplicados antes dos maiores
+problema 2:
+Se os breakpoints não forem bem escolhidos, o layout pode quebrar em algumas resoluções.
+solução:
+escolher bem os pontos -->

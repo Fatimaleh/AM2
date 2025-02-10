@@ -1,0 +1,20 @@
+12. Considere que você tem um menu dropdown que exibe subitens quando o usuário passa o mouse (hover) ou toca (em dispositivos móveis) no item principal. Entretanto, em alguns navegadores, o evento de toque não está abrindo o menu adequadamente.
+
+**Pergunta:** Proponha uma solução em JavaScript para detectar o tipo de dispositivo ou interação (touch vs. mouse) e mostre como aplicaria classes CSS diferentes (por exemplo, `.hover` vs. `.active`) para garantir o funcionamento do dropdown em todas as plataformas.
+
+Resposta:
+
+O  CSS, cria um estilo a partir da classe menu criada. Agora podemos aplicar o estilo “.hover” para o desktop e estilo “.active” para mobile.
+O JavaScript é necessário para realizar a função detectarUsuario, que busca o “userAgent” do tipo de navegador e assim determinar se é um dispositivo móvel ou desktop.
+
+function detectarUsuario() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      if (userAgent.includes('mobile') || userAgent.includes('android') || userAgent.includes('iphone') || userAgent.includes('ipad')) {
+        document.body.classList.add('mobile');
+      } else {
+        document.body.classList.add('desktop');
+      }
+    }
+
+Assim, dependendo do dispositivo, a classe mobile ou desktop é adicionada ao elemento <body>.
+Com isso, garantimos que estilos hover sejam aplicados somente em computadores, enquanto estilos active funcionem somente em computadores.

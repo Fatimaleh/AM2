@@ -1,0 +1,10 @@
+O JavaScript captura o evento de envio do formulário (submit), interrompe o envio padrão (preventDefault()) e verifica cada campo do formulário.
+Se houver erros, exibe mensagens diretamente no DOM.
+
+🔹 2. Manipulação do DOM
+O JavaScript usa funções como:
+
+document.getElementById("id") → Captura um elemento do HTML pelo seu ID.
+.value → Obtém o valor digitado no campo.
+.trim() → Remove espaços antes e depois do texto.
+.textContent → Modifica o texto dentro de uma span para exibir mensagens de erro.

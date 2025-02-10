@@ -1,0 +1,64 @@
+15. Você está construindo uma aplicação SPA que precisa trabalhar offline, exibindo conteúdo carregado anteriormente quando o usuário não tiver conexão. Para isso, considera usar Service Workers e um manifesto PWA.
+
+**Pergunta:** Explique como configurar um Service Worker para:
+
+1. *Cachear* arquivos estáticos (HTML, CSS, JS, imagens).
+2. Providenciar uma experiência offline básica.
+3. Atualizar o cache quando houver nova versão dos arquivos.Em seguida, descreva como o manifesto **PWA** ajuda a “instalar” o app no dispositivo do usuário e quais campos são essenciais nesse manifesto.
+
+Resposta:
+
+1. Primeiro é configurado o cache. Para criar a uma nova inserção, utilizamos a função CacheStorage.open; Cache.add ou Cache.put, podem ser usados para adicionar essa nova informação no service worker. Depois, para a navegação, utilizamos o Cache.match para buscar essa informação dentro do cache e ao aparece informações divergentes ou atualizadas, implementamos a função Cache.delete, para apagar a informação desatualizada.
+
+
+2.
+const cacheName = 'JabutiAmarelo';
+
+
+const atividadesJabuti = [ //incluímos todos os dados iniciais
+  '/JabutiAmareloComendo.jpg',
+  '/JabutiAmareloDormindo.jpg',
+  '/JabutiAmareloBebendo.jpg',
+];
+
+self.addEventListener('install', (event) => { //pré-cacher os dados ao instalar
+  event.waitUntil(caches.open(cacheName).then((cache) => {
+    return cache.addAll(atividadesJabuti); //adiciona os dados no cache
+  }));
+});
+
+self.addEventListener('fetch', (event) => {
+  const url = new URL(loucosporjabuti.com); 
+  const precacheAtividadesJabuti = atividadesJabuti.includes(url.pathname); //verifica se os dados já foram precacheados
+
+  if (isPrecachedRequest) {
+    event.respondWith(caches.open(cacheName).then((cache) => { //cria o cache e copia os dados
+      return cache.match(loucosporjabuti.com); // localiza e envia os dados salvos no cache
+    }));
+  } else { //se não houver dados, envias as solicitações para a rede
+    return;
+  }
+});
+
+3. Para manter o cache atualizado podemos utilizar o método que prioriza a velocidade, enviando a ultima entrada da ultima navegação, porém no decorrer da navegação atual; o navegador envia solicitação para localizar os arquivos atualizados e depois traze-los para cache, quando necessário. Mantendo a navegação rápida e atualizada.
+
+const cacheName = 'JabutiAmarelo';
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.destination === 'imagem') {
+    event.respondWith(caches.open(cacheName).then((cache) => { //cria o cache
+      return cache.match(event.request).then((cachedResponse) => { // localiza e envia os dados salvos no cache
+        const fetchedResponse = fetch(event.request).then((networkResponse) => {
+          cache.put(event.request, networkResponse.clone()); //recria a informação (copia) no cache
+
+          return networkResponse;
+        });
+
+        return cachedResponse || fetchedResponse; 
+      });
+    }));
+  } else {
+    return;
+  }
+});
+
