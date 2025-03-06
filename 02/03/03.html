@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Imagens - Lorem Picsum</title>
+    <link rel="stylesheet" href="03.css">
+</head>
+<body>
+    <h2>Carrossel de Imagens - Lorem Picsum</h2>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel"></div>
+        <div class="navigation">
+            <button onclick="moveCarousel(-1)">Anterior</button>
+            <button onclick="moveCarousel(1)">Próximo</button>
+        </div>
+    </div>
+    
+    <div class="rating">
+        <label for="rating">Avalie a imagem (nota): </label>
+        <input type="number" id="rating" min="1" max="10" value="0" />
+        <button onclick="saveRating()">Salvar Avaliação</button>
+    </div>
+    
+    <script src="03.js"></script>
+</body>
+</html>

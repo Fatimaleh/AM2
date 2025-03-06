@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões 08 e 09</title>
+    <link rel="stylesheet" href="questao09.css" />
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="search-input" placeholder="Filtrar por autor..." />
+        <div id="image-grid" class="image-grid"></div>
+
+        <div class="buttons">
+            <button onclick="addImageWithAuthor('assets/VanGogh.jpg', 'Vincent van Gogh')">Adicionar Van Gogh</button>
+            <button onclick="addImageWithAuthor('assets/Monet.jpg', 'Claude Monet')">Adicionar Monet</button>
+            <button onclick="addImageWithAuthor('assets/DaVinci.jpg', 'Leonardo da Vinci')">Adicionar Da Vinci</button>
+        </div>
+    </div>
+
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Detalhes da Imagem</h2>
+            <p id="modal-author"></p>
+            <p id="modal-dimensions"></p>
+            <p id="modal-url"></p>
+        </div>
+    </div>
+
+    <script src="questao09.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.carousel-container {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel img {
+    width: 600px;
+    height: 400px;
+    flex-shrink: 0;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

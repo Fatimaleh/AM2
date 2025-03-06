@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.carousel-container {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel img {
+    width: 600px;
+    height: 400px;
+    flex-shrink: 0;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+.rating {
+    margin-top: 10px;
+}
+.rating input {
+    font-size: 24px;
+}

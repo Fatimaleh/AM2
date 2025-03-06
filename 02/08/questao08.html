@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 08: Cache de Dados</title>
+    <link rel="stylesheet" href="questao08.css" />
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="search-input" placeholder="Filtrar por autor..." />
+        <div id="image-grid" class="image-grid"></div>
+
+        <div class="buttons">
+            <button onclick="addImageWithAuthor('assets/VanGogh.jpg', 'Vincent van Gogh')">Adicionar Van Gogh</button>
+            <button onclick="addImageWithAuthor('assets/Monet.jpg', 'Claude Monet')">Adicionar Monet</button>
+            <button onclick="addImageWithAuthor('assets/DaVinci.jpg', 'Leonardo da Vinci')">Adicionar Da Vinci</button>
+        </div>
+    </div>
+
+    <script src="questao08.js"></script>
+</body>
+</html>
